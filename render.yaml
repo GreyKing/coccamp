@@ -17,4 +17,4 @@ services:
         value: 2 # Recommended default
 databases:
   - name: coccamp-db
-    plan: free
+    plan: basic-256mb
