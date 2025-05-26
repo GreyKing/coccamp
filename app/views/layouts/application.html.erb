@@ -9,8 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+  <%= render "application/new_nav_bar" %>
   <body>
+  <div class="sign-container max-h-[80vh]">
+    <div class="sign-main overflow-y-auto justify-center"  style="text-align: center;">
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>

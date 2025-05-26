@@ -1,0 +1,22 @@
+<div class="sign-container">
+  <div class="sign-main">
+    <h1><%= @food_registration.name %></h1>
+    <dl>
+      <dt>Email:</dt>                 <dd><%= @food_registration.email %></dd>
+      <dt>Phone:</dt>                 <dd><%= @food_registration.phone %></dd>
+      <dt>Solo?:</dt>                 <dd><%= @food_registration.solo? ? "Yes" : "No" %></dd>
+      <dt>Planned Meals:</dt>         <dd><%= @food_registration.planned_meals.humanize %></dd>
+      <dt>Cooked Meals:</dt>          <dd><%= @food_registration.cooked_meals.humanize %></dd>
+      <dt>Clean Up Meals:</dt>        <dd><%= @food_registration.clean_up_meals.humanize %></dd>
+      <dt>Eat Out Meals:</dt>         <dd><%= @food_registration.eat_out_meals.humanize %></dd>
+      <dt>Favorite Meal Type:</dt>    <dd><%= @food_registration.meal_types.humanize %></dd>
+      <dt>Allergies/Restrictions:</dt><dd><%= @food_registration.allergies_and_restrictions %></dd>
+      <dt>Special Requests:</dt>      <dd><%= @food_registration.special_requests %></dd>
+    </dl>
+  </div>
+
+  <div class="sign-nav">
+    <%= link_to "Edit", edit_food_registration_path(@food_registration), class: "badge hotdog-badge" %>
+    <%= link_to "Back", food_registrations_path, class: "badge hiking-badge" %>
+  </div>
+</div>

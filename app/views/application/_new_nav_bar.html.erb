@@ -1,0 +1,61 @@
+<nav
+  class="z-20
+         fixed left-6 top-1/2 -translate-y-1/2
+         flex flex-col items-center gap-6
+         rounded-lg border-2 border-[#1b140a]
+         bg-[#2c2114]/75
+         w-32
+         px-6 py-6
+         shadow-lg backdrop-blur-sm">
+  <%= link_to root_path,
+              class: "flex aspect-square w-20 flex-col items-center justify-center gap-1
+                rounded-md bg-gradient-to-b from-[#c25a27] to-[#e9a34d]
+                border-2 border-[#61190e] p-1.5 text-[#2f1500]",
+              title: "Home" do %>
+    <span class="text-4xl">🌲</span>
+    <small class="text-xs font-medium text-[#fef8e2]">About Us</small>
+  <% end %>
+
+  <hr class="w-full border-[#5c4123]" />
+
+  <%= link_to new_food_registration_path,
+              class: "flex aspect-square w-20 flex-col items-center justify-center gap-1
+                rounded-full bg-[#cfcfcf] border-2 border-[#aaa]
+                p-1.5 text-[#5c4123] hover:bg-[#e0dfdf]",
+              title: "Register for Meals" do %>
+
+
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 512 512"
+         class="w-6 h-6 fill-current"
+         aria-hidden="true">
+      <path d="<%= hot_dog_svg %>">
+    </svg>
+
+
+
+
+    <small class="text-xs font-medium text-[#2f1500]">Sign-Up</small>
+  <% end %>
+
+  <%= link_to food_registrations_path,
+              class: "flex aspect-square w-20 flex-col items-center justify-center gap-1
+                rounded-full bg-[#cfcfcf] border-2 border-[#aaa]
+                p-1.5 text-[#5c4123] hover:bg-[#e0dfdf]",
+              title: "Browse Campers" do %>
+
+
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 512 512"
+         class="w-6 h-6 fill-current"
+         aria-hidden="true">
+      <path d="<%= hiking_svg %>"/>
+    </svg>
+
+
+
+    <small class="text-xs font-medium text-[#2f1500]">Roster</small>
+  <% end %>
+</nav>

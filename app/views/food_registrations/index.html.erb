@@ -1,0 +1,30 @@
+<div class="sign-container">
+  <div class="sign-main">
+    <h1>All Registrations</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th><th>Email</th><th>Phone</th><th>Solo?</th><th colspan="3"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @food_registrations.each do |fr| %>
+        <tr>
+          <td><%= fr.name %></td>
+          <td><%= fr.email %></td>
+          <td><%= fr.phone %></td>
+          <td><%= fr.solo? ? "Yes" : "No" %></td>
+          <td><%= link_to "Show", fr %></td>
+          <td><%= link_to "Edit", edit_food_registration_path(fr) %></td>
+          <td><%= link_to "Delete", fr, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sign-nav">
+    <%= link_to "New Registration", new_food_registration_path, class: "badge hotdog-badge", title: "New" %>
+    <%= link_to "Home", root_path, class: "badge hiking-badge", title: "Home" %>
+  </div>
+</div>

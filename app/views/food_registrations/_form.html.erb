@@ -1,0 +1,47 @@
+<%= form_with(model: food_registration, local: true, html: { class: "nps-form" }) do |f| %>
+  <% if food_registration.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(food_registration.errors.count, "error") %> prohibited this registration from saving:</h2>
+      <ul>
+        <% food_registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :phone %>
+  <%= f.telephone_field :phone %>
+
+  <%= f.label :solo, "Attending Solo?" %>
+  <%= f.check_box :solo %>
+
+  <%= f.label :planned_meals %>
+  <%= f.select :planned_meals, FoodRegistration.planned_meals.keys.map { |k| [k.humanize, k] }, include_blank: true %>
+
+  <%= f.label :cooked_meals %>
+  <%= f.select :cooked_meals, FoodRegistration.cooked_meals.keys.map { |k| [k.humanize, k] }, include_blank: true %>
+
+  <%= f.label :clean_up_meals %>
+  <%= f.select :clean_up_meals, FoodRegistration.clean_up_meals.keys.map { |k| [k.humanize, k] }, include_blank: true %>
+
+  <%= f.label :eat_out_meals %>
+  <%= f.select :eat_out_meals, FoodRegistration.eat_out_meals.keys.map { |k| [k.humanize, k] }, include_blank: true %>
+
+  <%= f.label :meal_types, "Favorite Meal Type" %>
+  <%= f.select :meal_types, FoodRegistration.meal_types.keys.map { |k| [k.humanize, k] }, include_blank: true %>
+
+  <%= f.label :allergies_and_restrictions %>
+  <%= f.text_area :allergies_and_restrictions %>
+
+  <%= f.label :special_requests %>
+  <%= f.text_field :special_requests %>
+
+  <%= f.submit class: "button" %>
+<% end %>
